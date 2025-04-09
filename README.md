@@ -2,6 +2,7 @@
 
 앱 리뷰 데이터를 크롤링하고, 전처리한 후 SDT 요인 분류와 감성 분석을 진행하는 파이프라인
 
+
 ## 파일 구성
 
 - **crawler.py**  
@@ -11,24 +12,31 @@
     - 앱 리스트는 사전에 CSS 파일을 직접 수집하여 확보할 필요가 있음.
     - 상세 셀렉터는 상황에 따라 변경될 수 있음.
 
+
 - **main.py**  
   전체 파이프라인 실행 파일.
   - **역할**:  
     - `preprocessing.py`, `sdt_classifier.py`, `sentiment_analysis.py`를 순차적으로 실행  
     - 개인 PC의 GPU 유무 및 사양에 따라 옵션 조정 가능
 
+
 - **preprocessing.py**  
   매우 기본적인 수준의 전처리 작업 수행.
+
 
 - **sdt_classifier.py**  
   허깅페이스의 Zero-shot 분류 모델을 활용하여 리뷰를 3개의 SDT 요인(자율성/유능감/관계성)으로 분류.
 
+
 - **sentiment_analysis.py**  
   허깅페이스의 감성 분석 모델을 사용하여 리뷰 감성을 positive/neutral/negative로 분류.
+
 
 - **test.py**  
   전체 파이프라인을 실행하지 않고, 하나 또는 몇 개의 문장을 입력하여 SDT 분류를 테스트할 수 있는 스크립트.
   빠른 실행을 통해 프롬프트 엔지니어링 테스트에 적합함.
+
+  
 
 - **sentiment_only.py**  
   main 실행 후 생성된 감성 분석 결과 컬럼을 보완하는 스크립트.
