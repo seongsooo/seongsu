@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 
 def main():
     # CSV 파일 경로 직접 지정
-    csv_path = r"./app_info/meta-2025-03-14_game_top-selling-this-week.csv"
+    csv_path = r"./file.csv"
     
     # CSV 파일 읽기
     df_apps = pd.read_csv(csv_path)
